@@ -1,0 +1,24 @@
+id: AssetImageSizeButton
+name: AssetImageSizeButton
+version: 1.0.0
+description: <__trans phrase="Asset to the image paste option, you add a button image size setting.">
+author_name: Yuichi Takeuchi
+author_link: http://takeyu-web.com/
+l10n_class: AssetImageSizeButton::L10N
+
+system_config_template: system_config.tmpl
+
+settings:
+    large:
+        scope: system
+        default: 480
+    midium:
+        scope: system
+        default: 360
+    small:
+        scope: system
+        default: 240
+
+callbacks:
+    MT::App::CMS::template_source.asset_options_image: AssetImageSizeButton::Plugin::_cb_ts_asset_options_image
+    MT::App::CMS::template_param.asset_options_image: AssetImageSizeButton::Plugin::_cb_tp_asset_options_image
